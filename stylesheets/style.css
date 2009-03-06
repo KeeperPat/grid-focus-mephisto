@@ -297,7 +297,7 @@ a:hover {
 	padding: 0 4px;
 }
 .postMeta span.comments {
-	background: #fff url(images/chat_grey.gif) no-repeat 2px -1px;
+	background: #fff url(/images/chat_grey.gif) no-repeat 2px -1px;
 	padding-left: 18px;
 }
 
