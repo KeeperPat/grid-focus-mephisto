@@ -13,6 +13,7 @@
 				</p>
 			</div>
 			<h2>{{ article | link_to_article }}</h2>
+			<p class="articleAuthor">by {{ article.author.login }}</p>  
 			<div class="entry">
 		{% if article.excerpt %}
 				{{ article.excerpt }}

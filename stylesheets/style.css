@@ -306,13 +306,16 @@ a:hover {
 	margin: 0 0 21px 0;
 }
 .post h2 {
-	margin-bottom: 10px;
 	padding: 0 3px;
 }
 .post h2 a {
 	display:block;
 }
-
+.post .articleAuthor {
+	padding: 0 3px;
+	font-style: italic;
+	font-weight: bold;
+}
 /* =----------------------------------- entry body */
 .entry {
 	padding: 0 3px;
