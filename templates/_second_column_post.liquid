@@ -1,5 +1,13 @@
 <div class="secondaryColumn">
 	<!-- Recent Posts -->
+	<div id="recent-posts" class="widgetContainer recent-entries">
+		<h3 class="widgetTitle">Recent Posts</h3>
+			<ul class="dates">
+{% for article in site.latest_articles %}
+				<li>{{ article | link_to_article }}</li>
+{% endfor %}
+			 </ul>
+	</div>
 	<!-- Tags -->
 	<!-- Categories -->
 </div>
