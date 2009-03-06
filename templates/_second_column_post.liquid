@@ -2,7 +2,7 @@
 	<!-- Recent Posts -->
 	<div id="recent-posts" class="widgetContainer recent-entries">
 		<h3 class="widgetTitle">Recent Posts</h3>
-			<ul class="dates">
+			<ul>
 {% for article in site.latest_articles %}
 				<li>{{ article | link_to_article }}</li>
 {% endfor %}
@@ -10,4 +10,12 @@
 	</div>
 	<!-- Tags -->
 	<!-- Categories -->
+	<div id="categories" class="widgetContainer">
+		<h3 class="widgetTitle">Categories</h3>
+			<ul>
+{% for section in site.blog_sections %}
+				<li>{{ section | link_to_section }}</li>
+{% endfor %}
+			 </ul>
+	</div>
 </div>
