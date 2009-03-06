@@ -144,6 +144,9 @@ a:hover {
 .commentlist .comment-meta a {
 	color: #777;
 }
+.commentlist .comment-meta span {
+	text-transform: lowercase;
+}
 .commentlist .comment-author cite {
 	font-style: normal;
 	font-weight: bold;
@@ -151,8 +154,8 @@ a:hover {
 .commentlist .comment-meta {
 	font-size: 0.8em;
 }
-#commentform p span input,
-#commentform span textarea {
+#comment-form p span input,
+#comment-form span textarea {
 	color: #333;
 	font-family: arial,verdana,sans-serif;
 	font-size: 1em;
@@ -506,13 +509,13 @@ a:hover {
 .commentlist .children li {
 	list-style: none;
 }
-#commentform .contain {
+#comment-form .contain {
 	margin: 0 0 10px 0 !important;
 }
-#commentform #author,
-#commentform #email,
-#commentform #url,
-#commentform textarea {
+#comment-form #comment_author,
+#comment-form #comment_author_email,
+#comment-form #comment_author_url,
+#comment-form textarea {
 	padding: 4px 3px;
 	border: 1px solid #ccc;
 	border-left-color: #bbb;
@@ -520,19 +523,19 @@ a:hover {
 	background: #fff;
 	margin-right: 4px;
 }
-#commentform #author,
-#commentform #email,
-#commentform #url,
-#commentform textarea {
+#comment-form #comment_author,
+#comment-form #comment_author_email,
+#comment-form #comment_author_url,
+#comment-form textarea {
 	border: 1px solid #bbb;
 	outline: none;
 	padding: 4px 3px;
 	width: 160px;
 }
-#commentform p label {
+#comment-form p label {
 	margin: 4px 0 0 0;
 }
-#commentform textarea {
+#comment-form textarea {
 	float: none;
 	width: 98%;
 	overflow: auto;

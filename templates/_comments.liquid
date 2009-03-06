@@ -1,0 +1,45 @@
+{% if article.comments.size > 0 %}
+	<h3 id="comments">{{ article.comments_count | pluralize: "Response"}}</h3>
+
+	<ol class="commentlist">
+	{% for comment in article.comments) %}
+		<li id="comment-{{ comment.id }}">
+			<div class="comment-author">
+				<!-- TODO get gravatar based on email -->
+				<img class="avatar avatar-32 photo" height="32" width="32" src="http://www.gravatar.com/avatar/?s=32&d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&r=G" alt=""/>
+				<cite>{{ comment.author_link }}</cite> Says:
+			</div>
+			<div class="comment-meta">
+				<a href="#comment-{{ comment.id }}" title="">
+					{{ comment.created_at | date: "%B %e, %Y" }} at 
+					<span class="">
+						{{ comment.created_at | date: "%l:%M %p" }}
+					</span>
+				</a>
+			</div>
+			
+			{{ comment.body }}
+		</li>
+	{% endfor %}
+	</ol>
+{% else %}
+	{% if article.accept_comments %}
+		<!-- If comments are open, but there are no comments. -->
+	{% else %}
+		<!-- If comments are closed. -->
+		<p class="nocomments">Comments are closed.</p>
+	{% endif %}
+{% endif %}
+
+{% if article.accept_comments %}
+<h3 id="respondTitle">Leave a Reply</h3>
+{% commentform %}
+  <p class="contain">{{ form.name }}<label for="author"><small>Name (required)</small></label></p>
+  <p class="contain">{{ form.email }}<label for="email"><small>Mail (will not be published)</small></label></p>
+  <p class="contain">{{ form.url }}<label for="url"><small>Website</small></label></p>
+  <p class="contain"><textarea name="comment[body]" id="comment" cols="100%" rows="10">{{ submitted.body }}</textarea></p>
+  <p><input name="submit" type="submit" id="submit" value="Submit Comment" /></p>
+{% endcommentform %}
+{% else %}
+<p class="nocomments">Comments are closed.</p>
+{% endif %}
