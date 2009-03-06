@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>{{ site.title }} {% if article %} {{ article.title }} {% else %} {{ site.subtitle }} {% endif %}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="generator" content="Mephisto" />
+	{{ 'style' | stylesheet }}
+	{{ site.home_section | articles_feed }}
+	{{ 'jquery-1.2.6.min.js' | javascript }}
+	{{ 'functions.js' | javascript }}
+</head>
+<body>
+<div id="wrapper">
+	<div id="masthead" class="fix">
+		<h1><a href="/">{{ site.title }}</a></h1>
+		<div id="blogLead">
+			{{ 'avatar.png' | img_tag }}
+			<p id="authorIntro">{{ site.subtitle }}</p>
+		</div>
+	</div>
+	
+	'/navigation.strip.php'
