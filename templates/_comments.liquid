@@ -5,8 +5,7 @@
 	{% for comment in article.comments) %}
 		<li id="comment-{{ comment.id }}">
 			<div class="comment-author">
-				<!-- TODO get gravatar based on email -->
-				<img class="avatar avatar-32 photo" height="32" width="32" src="http://www.gravatar.com/avatar/?s=32&d=http%3A%2F%2Fwww.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&r=G" alt=""/>
+				{{ comment | gravatar size:16 default:'http://www.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=16' }}
 				<cite>{{ comment.author_link }}</cite> Says:
 			</div>
 			<div class="comment-meta">

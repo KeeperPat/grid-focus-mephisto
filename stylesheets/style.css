@@ -477,11 +477,9 @@ a:hover {
 	margin-top: 10px;
 	overflow: hidden;
 }
-.commentlist .comment-author img.avatar {
+.commentlist .comment-author img {
 	display: block;
 	float: left;
-	height: 16px;
-	width: 16px;
 	margin: 0 4px 0 0;
 }
 .commentlist .comment-meta {
