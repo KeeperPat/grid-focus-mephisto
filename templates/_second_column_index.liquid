@@ -1,5 +1,36 @@
 <div class="secondaryColumn">
 	<!-- Archives -->
+	<div id="archives" class="widgetContainer widget_archive">
+		<h3 class="widgetTitle">Archives</h3>
+		<ul>
+{{ '' | section | months | assign_to: 'home_section' }}
+{% for month in home_section.months %}
+	{{ home_section | monthly_articles: month | size | assign_to: 'articles_count' }}
+	{% if articles_count > 0 %}
+			<li>{{ home_section | link_to_month: month }} ({{ articles_count }})</li>
+	{% endif %}
+{% endfor %}
+		</ul>
+	</div>
 	<!-- Pages -->
+{% if site.page_sections.size > 0 %}
+	<div id="pages" class="widgetContainer widget_pages">
+		<h3 class="widgetTitle">Pages</h3>
+		<ul>
+{% for page in site.page_sections %}
+			<li> {{ page | link_to_section }} </li>
+{% endfor %}	
+		</ul>
+	</div>
+{% endif %}
 	<!-- Meta -->
+	<div id="meta" class="widgetContainer widget_meta">
+		<h3 class="widgetTitle">Meta</h3>
+		<ul>
+			<li><a href="/admin">Log in</a></li>
+			<li><a href="/feed/" title="Syndicate this site using Atom">Entries Feed</a></li>
+			<li><a href="/feed/all_comments.xml" title="The latest comments to all posts in Atom">Comments Feed</a></li>
+			<li><a href="http://mephistoblog.com/" title="Powered by Mephisto- The best blogging system ever.">Mephisto</a></li>
+		</ul>
+	</div>
 </div>
