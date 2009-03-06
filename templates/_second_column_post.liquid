@@ -2,20 +2,28 @@
 	<!-- Recent Posts -->
 	<div id="recent-posts" class="widgetContainer recent-entries">
 		<h3 class="widgetTitle">Recent Posts</h3>
-			<ul>
+		<ul>
 {% for article in site.latest_articles %}
-				<li>{{ article | link_to_article }}</li>
+			<li>{{ article | link_to_article }}</li>
 {% endfor %}
-			 </ul>
+		</ul>
 	</div>
-	<!-- Tags -->
+	<!-- Tags - Look into Tag Cloud Plugins if you want a real tag cloud -->
+	<div id="tag_cloud" class="widgetContainer widget_tag_cloud">
+		<h3 class="widgetTitle">Tag Cloud</h3>
+		<ul>
+{% for tag in site.tags %}
+			<li>{{ tag | link_to_tag }} ({{tag | tagged_articles | size }})</li>
+{% endfor %}
+    </ul>
+	</div>
 	<!-- Categories -->
 	<div id="categories" class="widgetContainer">
 		<h3 class="widgetTitle">Categories</h3>
-			<ul>
+		<ul>
 {% for section in site.blog_sections %}
-				<li>{{ section | link_to_section }}</li>
+			<li>{{ section | link_to_section }}</li>
 {% endfor %}
-			 </ul>
+		</ul>
 	</div>
 </div>
