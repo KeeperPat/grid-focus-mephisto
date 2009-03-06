@@ -1,0 +1,20 @@
+<div class="navStripWrapper">
+	<ul class="nav fix">
+		<li><a href="/" title="Return to the the frontpage">Frontpage<br /><span>Return home</span></a></li>
+		<li><a id="triggerCatID" href="#" title="Show categories">Browse<br /><span>By topic</span></a></li>
+		<li class="last"><a href="{{ '/feed/' + site.home_section.to_feed_url.join('/') }}" title="Subscribe to the main feed via Atom">Subscribe<br /><span>Atom feed</span></a></li>
+		<li id="searchBar1" class="searchField">
+			<div>
+				<form method="get" id="searchForm1" action="/search">
+				<span><input type="text" value="Search the archives..." onfocus="if (this.value == 'Search the archives...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search the archives...';}" name="q" id="s1" /></span>
+				</form>
+			</div>
+		</li>
+	</ul>
+
+	<div id="footerStrip" class="toggleCategories fix" style="display: none;"> 
+		<ul class="fix">
+			{% for category in site.blog_sections %}<li class="cat-item">{{ category | link_to_section	 }}</li>{% endfor %}
+		</ul>
+	</div>
+</div>
