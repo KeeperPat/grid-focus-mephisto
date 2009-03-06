@@ -1,0 +1,4 @@
+<div class="entry meta">
+	{% if article.sections.size > 0 %}<p><span class="highlight">Category:</span> {{ article | linked_section_list }}</p>{% endif %}
+	{% if article.tags.size > 0 %}<p><span class="highlight">Tagged:</span> {{ article | linked_tag_list }}</p>{% endif %}
+</div>

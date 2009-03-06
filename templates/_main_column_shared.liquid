@@ -1,0 +1,48 @@
+	<div id="mainColumn">
+{% if articles.size > 0 %}
+	{% for article in articles %}
+		<div id="post-{{ article.id }}" class="post">
+			<div class="postMeta">
+				<p class="container">
+					<span class="date">{{ article.published_at | date: "%b %e, %Y" }}</span>
+					<span class="comments">
+						<a href="{{ article.url }}#comments" title="{{ article.comments_count | pluralize: 'Comment'}}">
+							{{ article.comments_count }}
+						</a>
+					</span>
+				</p>
+			</div>
+			<h2>{{ article | link_to_article }}</h2>
+			<div class="entry">
+		{% if article.excerpt %}
+				{{ article.excerpt }}
+			{% unless mode == 'single' %}
+				<a href="{{ article.url }}">Read the rest of this entry &raquo;</a>
+			{% endunless %}
+		{% else %}
+			{% unless mode == 'single' %}{{ article.body }}{% endunless %}
+		{% endif %}
+		{% if mode == 'single' %}
+			{{ article.body }}
+			{% include 'article_meta_box' %}
+		</div>
+		<div id="commentsContainer">
+			comments_template();
+		</div>
+		{% endif %}
+			</div>
+		</div>
+	{% endfor %}
+{% else %}
+		<div class="post">
+			<div class="postMeta">
+				<p class="container">
+					<span class="date">No Matches</span>
+				</p>
+			</div>
+			<h2>No matching results</h2>
+			<div class="entry">
+				<p>You seem to have found a mis-linked page or search query with no matching results. Please trying your search again. If you feel that you should be staring at something a little more concrete, feel free to email the author of this site or browse the archives.</p>
+			</div>
+		</div>
+{% endif %}
