@@ -1,0 +1,34 @@
+<div id="mainColumn">
+	<div id="post-{{ article.id }}" class="post">
+		<div class="postMeta">
+			<p class="container">
+				<span class="date">{{ article.published_at | date: "%b %e, %Y" }}</span>
+				<span class="comments">
+					<a href="{{ article.url }}#comments" title="{{ article.comments_count | pluralize: 'Comment'}}">
+						{{ article.comments_count }}
+					</a>
+				</span>
+			</p>
+		</div>
+		<h2>{{ article | link_to_article }}</h2>
+		<p class="articleAuthor">by {{ article.author.login }}</p>	
+		<div class="entry">
+	{% if article.excerpt %}
+			{{ article.excerpt }}
+		{% unless mode == 'single' %}
+			<a href="{{ article.url }}">Read the rest of this entry &raquo;</a>
+		{% endunless %}
+	{% else %}
+		{% unless mode == 'single' %}{{ article.body }}{% endunless %}
+	{% endif %}
+	{% if mode == 'single' %}
+		{{ article.body }}
+		{% include 'article_meta_box' %}
+	</div>
+	<div id="commentsContainer">
+		{% include 'comments' %}
+	</div>
+	{% endif %}
+		</div>
+	</div>
+</div>
