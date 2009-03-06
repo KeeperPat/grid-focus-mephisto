@@ -21,8 +21,10 @@
 			<p id="authorIntro">{{ site.subtitle }}</p>
 		</div>
 	</div>
-	
+
 	{% include 'navigation_strip' %}
+
+	{{ content_for_layout }}
 
 	{% include 'footer_strip' %}
 	<div id="footer" class="fix">
