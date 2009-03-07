@@ -1,9 +1,8 @@
 {% if mode == 'page' %}
   {% include 'page' %}
 {% else %}
-<div id="filler" class="fix">
 	{% include 'main_column_shared' %}
+	{% include 'second_column_post' %}
+	{% include 'third_column_shared' %}
 </div>
 {% endif %}
-{% include 'second_column_post' %}
-{% include 'third_column_shared' %}
