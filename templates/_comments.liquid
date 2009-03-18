@@ -1,5 +1,10 @@
 {% if article.comments.size > 0 %}
-	<h3 id="comments">{{ article.comments_count | pluralize: "Response"}}</h3>
+	<h3 id="comments">
+		{{ article.comments_count | pluralize: "Response"}}
+		<a href="{{ article.url }}/comments.xml" title="Subscribe to Comments on &ldquo;{{ article.title }}&rdquo;">
+			<img alt="Atom" src="/images/feed-icon-14x14.png" />
+		</a>
+	</h3>
 
 	<ol class="commentlist">
 	{% for comment in article.comments) %}

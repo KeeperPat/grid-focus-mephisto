@@ -462,6 +462,12 @@ a:hover {
 	padding: 7px 4px 0;
 	border-top: 1px solid #3c6c92;
 }
+#commentsContainer h3 a img {
+	border: none;
+}
+#commentsContainer h3 img {
+	vertical-align: middle;
+}
 .cancel-comment-reply {
 	position: absolute;
 	top: -1px;

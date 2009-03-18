@@ -9,6 +9,11 @@
 	<meta name="generator" content="Mephisto" />
 	{{ 'style' | stylesheet }}
 	{{ site.home_section | articles_feed }}
+	{{ site.home_section | comments_feed }}
+{% if article %}
+  {{ article | comments_feed }}
+  {{ article | changes_feed }}
+{% endif %}
 	{{ 'jquery-1_2_6_min' | javascript }}
 	{{ 'functions.js' | javascript }}
 	{{ 'shCore' | stylesheet }}
