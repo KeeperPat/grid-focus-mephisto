@@ -11,6 +11,17 @@
 	{{ site.home_section | articles_feed }}
 	{{ 'jquery-1_2_6_min' | javascript }}
 	{{ 'functions.js' | javascript }}
+	{{ 'shCore' | stylesheet }}
+	{{ 'shThemeDefault' | stylesheet }}
+	{{ 'shCore' | javascript }}
+	<!-- Include the brushes for Syntax Highlighter Support. Other brushes are available in the javascripts directory. -->
+	{{ 'shBrushVb' | javascript }}
+	{{ 'shBrushCSharp' | javascript }}
+	{{ 'shBrushRuby' | javascript }}
+	{{ 'shBrushPlain' | javascript }}
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
 </head>
 <body>
 <div id="wrapper">
